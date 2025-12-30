@@ -207,11 +207,6 @@ export function QRCodeGenerator() {
                     <p className="text-[13px] text-zinc-400 dark:text-zinc-500">
                         built by <a href="https://sarthakshrestha.com.np" target="_blank" rel="noopener noreferrer" className="text-zinc-900 dark:text-zinc-300 font-medium hover:text-white transition-colors underline-offset-4 hover:underline">sarthak</a>
                     </p>
-                    <div className="h-4 w-[1px] bg-zinc-200 dark:bg-zinc-800" />
-                    <nav className="flex items-center gap-4">
-                        <a href="#" className="text-[12px] font-medium text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Privacy</a>
-                        <a href="#" className="text-[12px] font-medium text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Terms</a>
-                    </nav>
                 </motion.div>
             </motion.div>
         </div>
