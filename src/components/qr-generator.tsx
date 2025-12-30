@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import QRCode from "qrcode";
 import { motion, AnimatePresence } from "framer-motion";
-import { QrCode, RefreshCcw, Type, Copy, Check, Download, CheckCircle2 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { RefreshCcw, Type, Download, CheckCircle2 } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { MultipleStateButtonComponent, type ButtonStateKey } from "@/components/multiple-state-button/multiple-state-button-component";
 import { AppleSpinner } from "@/components/ui/apple-spinner";
@@ -15,7 +14,6 @@ const EASE_SMOOTH = [0.16, 1, 0.3, 1] as const;
 export function QRCodeGenerator() {
     const [url, setUrl] = useState("https://google.com");
     const [qrCodeUrl, setQrCodeUrl] = useState("");
-    const [copied, setCopied] = useState(false);
     const [exportState, setExportState] = useState<ButtonStateKey>('idle');
 
     const generateQRCode = async () => {
@@ -63,15 +61,15 @@ export function QRCodeGenerator() {
         }, 1500);
     };
 
-    const copyToClipboard = async () => {
-        try {
-            await navigator.clipboard.writeText(url);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    // const copyToClipboard = async () => {
+    //     try {
+    //         await navigator.clipboard.writeText(url);
+    //         setCopied(true);
+    //         setTimeout(() => setCopied(false), 2000);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
 
     const exportButtonConfig = {
         idle: {
